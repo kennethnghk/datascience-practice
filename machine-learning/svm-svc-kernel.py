@@ -1,4 +1,4 @@
-## Support Vector Machines - linear SVC kernel
+## Support Vector Machines - SVC kernel
 
 import numpy as np
 from pylab import *
@@ -30,7 +30,8 @@ nCluster = 5
 
 ## Use linear SVC to partition our graph into clusters:
 C = 1.0
-svc = svm.SVC(kernel='linear', C=C).fit(X, y)
+kernel = 'poly' ## linear, rbf, poly etc
+svc = svm.SVC(kernel=kernel, C=C).fit(X, y)
 
 ## Try to prediction which partition the data is belongs to
 print svc.predict([[200000, 40]])
